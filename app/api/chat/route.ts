@@ -79,7 +79,7 @@ following is the information related to this company in html format:
   <h3>Membership</h3>
   <div>
     <p>Premium</p>
-    <p>£9.999.99£</p>
+    <p>£9.99</p>
     <p>Every month</p>
     <p>Embrace your full potential</p>
     <p>3 day free trial</p>
@@ -179,9 +179,9 @@ following is the information related to this company in html format:
   <a href="https://www.enfiity.ai/group/stop-procrastinating-and-get-your-stuff-done"></a>
   <p>About:
     Founded in 2020.
-    Our purpose : 
+    Our purpose: 
     Making it easier to take care of our well-being and learning along the way. 
-    What we stand for :
+    What we stand for:
     Committing to resolve the issue from its underlying cause and having a broad perspective.
     Culturing a respectful and empathetic environment where mutual aid is at the center of our community.
     </p>
