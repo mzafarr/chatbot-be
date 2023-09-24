@@ -174,19 +174,19 @@ export function ChatWindow(props: {
 
       <form
         onSubmit={sendMessage}
-        className="bg-transparent mx-auto absolute bottom-0 mb-8 flex w-full flex-col"
+        className="bg-[#F1F1F1] z-10 bg-transparent mx-auto absolute bottom-0 flex w-full flex-col"
       >
         <div className="flex">{intemediateStepsToggle}</div>
-        <div className="flex w-full mt-4 justify-center">
+        <div className="flex w-full mt-4 justify-center mb-4 sm:mb-8">
           <input
-            className="grow max-w-[700px] focus:outline-none mx-4 sm:mx-8 p-2 sm:p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
+            className="grow max-w-[700px] focus:outline-none mx-4 sm:mx-8 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
             value={input}
             placeholder={"Ask me anything..."}
             onChange={handleInputChange}
           />
           <button
             type="submit"
-            className=" shrink-0 px-4 py-2 sm:px-8 sm:py-4 sm:mr-6 bg-black rounded-lg w-28"
+            className="mr-1 shrink-0 px-4 py-2 sm:px-8 sm:py-4 sm:mr-6 bg-black rounded-lg w-28"
           >
             <div
               role="status"
