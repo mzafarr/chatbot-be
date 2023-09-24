@@ -138,7 +138,7 @@ export function ChatWindow(props: {
   }
   return (
     <div
-      className={`bg-transparent flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${
+      className={`bg-transparent flex flex-col items-center sm:p-8 rounded grow overflow-hidden ${
         messages.length > 0 ? "border" : ""
       }`}
     >
@@ -151,7 +151,7 @@ export function ChatWindow(props: {
       />
       {messages.length === 0 ? emptyStateComponent : ""}
       <div
-        className="flex flex-col-reverse max-w-[900px] p-8 overflow-auto transition-[flex-grow] ease-in-out"
+        className="flex flex-col-reverse max-w-[900px] sm:p-8 overflow-auto transition-[flex-grow] ease-in-out"
         ref={messageContainerRef}
       >
         {messages.length > 0
@@ -179,7 +179,7 @@ export function ChatWindow(props: {
         <div className="flex">{intemediateStepsToggle}</div>
         <div className="flex w-full mt-4 justify-center">
           <input
-            className="grow max-w-[700px] focus:outline-none mx-4 sm:mx-8 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
+            className="grow max-w-[700px] focus:outline-none mx-4 sm:mx-8 p-2 sm:p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
             value={input}
             placeholder={"Ask me anything..."}
             onChange={handleInputChange}
