@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
      */
     const model = new ChatOpenAI({
       temperature: 0,
-      modelName: "gpt-turbo-3.5",
+      modelName: "gpt-turbo-3.5-16k",
     });
 
     /**
