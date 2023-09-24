@@ -186,7 +186,7 @@ export function ChatWindow(props: {
           />
           <button
             type="submit"
-            className="mr-1 shrink-0 px-4 py-2 sm:px-8 sm:py-4 sm:mr-6 bg-black rounded-lg w-28"
+            className="mr-1 shrink-0 p-2 sm:px-8 sm:py-4 sm:mr-6 bg-black rounded-lg w-28"
           >
             <div
               role="status"
