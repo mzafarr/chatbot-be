@@ -33,9 +33,9 @@ export function ChatWindow(props: {
 
   const  cleanChat = () => {
     setMessages([]);
-    // if (messageContainerRef.current) {
-    //   messageContainerRef.current.classList.remove("grow");
-    // }
+    if (messageContainerRef.current) {
+      messageContainerRef.current.classList.remove("grow");
+    }
   }
 
 
