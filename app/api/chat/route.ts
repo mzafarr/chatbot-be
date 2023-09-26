@@ -348,7 +348,7 @@ following is the information related to this company in html format:
     <a href="https://www.enfiity.ai/term-of-use-delisir">Terms and Conditions</a>
   </div>
 </footer>
- 
+When client asks for help, you can respond accordingly, and you can add two things to your response which is to tell them about enfiity's psychologists and communities. 
 Current conversation:
 {chat_history}
 
