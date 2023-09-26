@@ -192,7 +192,7 @@ export function ChatWindow(props: {
           />
           <button
             type="submit"
-            className="mr-1 shrink-0 p-3 sm:p-4 sm:mr-6 bg-black rounded-lg w-28 sm:rounded-full flex justify-center"
+            className="mr-1 shrink-0 p-3 sm:p-4 sm:mr-6 bg-black rounded-lg sm:rounded-full flex justify-center"
           >
             <div
               role="status"
