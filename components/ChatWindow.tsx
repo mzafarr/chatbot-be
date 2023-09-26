@@ -31,11 +31,11 @@ export function ChatWindow(props: {
     showIntermediateStepsToggle,
   } = props;
 
-  function cleanChat() {
+  const  cleanChat = () => {
     setMessages([]);
-    if (messageContainerRef.current) {
-      messageContainerRef.current.classList.remove("grow");
-    }
+    // if (messageContainerRef.current) {
+    //   messageContainerRef.current.classList.remove("grow");
+    // }
   }
 
 
@@ -188,10 +188,10 @@ export function ChatWindow(props: {
       >
         <div className="flex">{intemediateStepsToggle}</div>
         <div className="flex w-full mt-4 justify-center items-center">
-          <button onClick={cleanChat} className="flex justify-center items-center shrink-0 p-3 sm:p-4 sm:ml-4 ml-1 bg-black rounded-full sm:w-28 sm:h-14">
+          <div onClick={()=>cleanChat()} className="flex justify-center items-center shrink-0 p-3 sm:p-4 sm:ml-4 ml-1 bg-black rounded-full sm:w-28 sm:h-14">
             <Image width={30} src={newChatButton} alt="clear chat button" />
             <span className="hidden sm:block ml-2 font-bold">New</span>
-          </button>
+          </div>
           <input
             className="grow max-w-[700px] focus:outline-none mx-2 sm:mx-6 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
             value={input}
