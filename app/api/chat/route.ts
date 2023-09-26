@@ -35,38 +35,32 @@ following is the information related to this company in html format:
 </div>
 <div>
   <h2>Explore our health-boosting</h2>
-  
   <div>
       <h3>Expert Articles</h3>
       <p>Ignite personal growth and enhance well-being with a curated collection of expert articles.</p>
       <a href="https://www.enfiity.ai/blog/categories/mind-and-brain-posts">Browse Articles</a>
   </div>
-
   <div>
       <h3> Article Creation</h3>
       <p>Step into a transformative learning journey with custom articles designed from our top experts exclusively to you.</p>
       <a href="https://www.enfiity.ai/blog/categories/mind-and-brain-posts">Request a custom article</a>
   </div>
-
   <div>
       <h3>Elevate with Programs</h3>
       <p>Join Personal Growth Programs. Empower self-discipline, strengthen resilience, and effect desired changes through structured frameworks.</p>
       <a href="https://www.enfiity.ai/blog/categories/mind-and-brain-posts">button</a>
   </div>
-
   <div>
       <h3>Q&A Community</h3>
       <p>Join a vibrant community where knowledge thrives. Ask questions, share insights, and connect with like-minded individuals.</p>
       <a href="https://www.enfiity.ai/blog/categories/mind-and-brain-posts">button</a>
   </div>
-
   <div>
       <h3>Explore</h3>
       <p>Immerse yourself in a transformative feed experience. Uncover new perspectives, and be inspired on your personal journey.</p>
       <a href="https://www.enfiity.ai/blog/categories/mind-and-brain-posts">button</a>
   </div>
 </div>
-
 <div>
   <h2>Master your health with our certified experts</h2>
   <p>
@@ -74,7 +68,6 @@ following is the information related to this company in html format:
   </p>
   <a href="https://www.enfiity.ai/book-online">View Experts</a>
 </div>
-
 <div>
   <h3>Membership</h3>
   <div>
@@ -92,7 +85,6 @@ following is the information related to this company in html format:
     <p>Earn Badges: Celebrate progress with achievement badges</p>         
   </div>
 <div>
-
 <div>
   <h2>The Vision</h2>
   <h3>Welcome to the Future of Well-Being</h3>
@@ -110,23 +102,19 @@ following is the information related to this company in html format:
   <p>
     Our vision embarks on a journey to amplify your life's essence by fusing expert wisdom with cutting-edge technology. This fusion will illuminate a pathway towards what we call 'synthetic' well-being, nurturing your mental and physical equilibrium for a future where you're fully empowered.
   </p>
- 
   <h4>Your Journey to Transformation</h4>
   <p>
   Here, you'll discover tools and experiences that boost personal growth. Get into cool challenges, explore enlightening programs, read interesting articles, and have one-on-one sessions – all tailored to shape your journey of self-improvement and change.
   </p>
-
   <h4>Mission</h4>
   <p>
   Our goal is to create a friendly space where experts in various fields, like psychologists, fitness trainers, and nutritionists, team up with you on a journey towards better well-being. By blending timeless wisdom with the latest tech, we help you understand yourself and the world in exciting new ways.
   </p>
-
   <h4>United for Progress</h4>
   <p>
   This community serves as a hub where everyone supports each other. Questions find answers, challenges are tackled, and achievements are celebrated.
   </p>
 </div>
-
 <div>
 <h3>Frequently asked questions</h3>
   <div>What is Enfiity?
@@ -187,7 +175,6 @@ following is the information related to this company in html format:
     </p>
   </div>
 </div>
-
 <div>
   <h3>Recent experts articles</h3>
   <a href="https://www.enfiity.ai/blog">our blogs</a>
@@ -243,7 +230,6 @@ following is the information related to this company in html format:
     </div>
   </div>
 </div>
-
 <div class="psychologists">
   <div class="psychologist">
     <p>Services:
@@ -274,7 +260,6 @@ following is the information related to this company in html format:
     </a>
   </div>
 </div>
-
 <div class="fitness-trainers">
   <div class="fitness-trainer">
     <p>Services:
@@ -324,6 +309,36 @@ following is the information related to this company in html format:
     </a>
   </div>
 </div>
+<div class="programs">
+  <div class="program">
+    <h4>Yoga in 7 Days: Discover your Inner Power</h4>
+    <p>7 Days, 7 Steps</p>
+  </div>
+  <div class="program">
+    <h4>Start reading a book</h4>
+    <p>7 Days, 7 Steps</p>
+  </div>
+  <div class="program">
+    <h4>The 1% Challenge: 30 Days of Daily Growth</h4>
+    <p>7 Days, 7 Steps</p>
+  </div>
+  <div class="program">
+    <h4>Start reading a book</h4>
+    <p>30 Days, 30 Steps</p>
+  </div>
+  <div class="program">
+    <h4>Eat Well, Feel Well: Wholesome Recipes for Health</h4>
+    <p>7 Steps</p>
+  </div>
+  <div class="program">
+    <h4>21-Day Anti-Procrastination Blitzk</h4>
+    <p>21 Days, 21 Steps</p>
+  </div>
+  <div class="program">
+    <h4>The Week of Creativity</h4>
+    <p>7 Days, 7 Steps</p>
+  </div>
+</div>
 <footer>
   <p>Enfiity platform takes your well-being seriously. With a team of reputable psychologists, experienced personal trainers, and knowledgeable nutritionists, we prioritize your mental and physical health. Backed by a wealth of resources and advanced artificial intelligence, we provide unwavering support on your wellness journey.</p>
   <p>Contact: team@enfiity.ai and info@enfiity.ai</p>
@@ -333,8 +348,7 @@ following is the information related to this company in html format:
     <a href="https://www.enfiity.ai/term-of-use-delisir">Terms and Conditions</a>
   </div>
 </footer>
-
-In the end ask if there is anything else they need assistance with  
+ 
 Current conversation:
 {chat_history}
 

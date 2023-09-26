@@ -13,6 +13,8 @@ import { UploadDocumentsForm } from "@/components/UploadDocumentsForm";
 import { IntermediateStep } from "./IntermediateStep";
 import Image from "next/image";
 import bg from "../public/images/bg.webp";
+import newChatButton from "../public/images/new.svg";
+import sendButton from "../public/images/send.svg";
 
 export function ChatWindow(props: {
   endpoint: string;
@@ -138,9 +140,7 @@ export function ChatWindow(props: {
   }
   return (
     <div
-      className={`bg-transparent flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${
-        messages.length > 0 ? "border" : ""
-      }`}
+      className={`bg-transparent flex flex-col justify-between items-center p-4 rounded grow overflow-hidden`}
     >
       <Image
         src={bg} // Path to your image in the public folder
@@ -149,44 +149,50 @@ export function ChatWindow(props: {
         objectFit="cover" // This scales the image to cover the entire div
         className="-z-10"
       />
-      {messages.length === 0 ? emptyStateComponent : ""}
-      <div
-        className="flex flex-col-reverse max-w-[900px] p-8 overflow-auto transition-[flex-grow] ease-in-out"
-        ref={messageContainerRef}
-      >
-        {messages.length > 0
-          ? [...messages]
-              .reverse()
-              .map((m) =>
-                m.role === "system" ? (
-                  <IntermediateStep key={m.id} message={m}></IntermediateStep>
-                ) : (
-                  <ChatMessageBubble
-                    key={m.id}
-                    message={m}
-                  ></ChatMessageBubble>
-                ),
-              )
-          : ""}
-      </div>
-
+      {messages.length === 0 ? (
+        emptyStateComponent
+      ) : (
+        <div
+          className="w-full lg:max-w-[900px] max-w-[700px] md:h-[90vh] md:w-[700px] md:bg-gradient-to-b md:from-white-opacity-75 md:via-white-opacity-25 md:to-transparent md:rounded-lg md:ring md:ring-slate-200 md:shadow-xl flex flex-col-reverse sm:p-8 mx-2 mb-16  overflow-auto transition-[flex-grow] ease-in-out items-end"
+          ref={messageContainerRef}
+        >
+          {messages.length > 0
+            ? [...messages]
+                .reverse()
+                .map((m) =>
+                  m.role === "system" ? (
+                    <IntermediateStep key={m.id} message={m}></IntermediateStep>
+                  ) : (
+                    <ChatMessageBubble
+                      key={m.id}
+                      message={m}
+                    ></ChatMessageBubble>
+                  ),
+                )
+            : ""}
+        </div>
+      )}
       {messages.length === 0 && ingestForm}
 
       <form
         onSubmit={sendMessage}
-        className="bg-transparent mx-auto absolute bottom-0 mb-8 flex w-full flex-col"
+        className={`absolute bottom-0 bg-transparent mx-auto z-30 sm:mb-8 mb-6 w-full md:w-[700px]`}
       >
         <div className="flex">{intemediateStepsToggle}</div>
-        <div className="flex w-full mt-4 justify-center">
+        <div className="flex w-full mt-4 justify-center items-center">
+          <button className="flex justify-center items-center shrink-0 p-3 sm:p-4 sm:ml-4 ml-1 bg-black rounded-full sm:w-28 sm:h-14">
+            <Image width={30} src={newChatButton} alt="clear chat button" />
+            <span className="hidden sm:block ml-2 font-bold">New</span>
+          </button>
           <input
-            className="grow max-w-[700px] focus:outline-none mx-4 sm:mx-8 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
+            className="grow max-w-[700px] focus:outline-none mx-2 sm:mx-6 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
             value={input}
             placeholder={"Ask me anything..."}
             onChange={handleInputChange}
           />
           <button
             type="submit"
-            className=" shrink-0 px-4 py-2 sm:px-8 sm:py-4 sm:mr-6 bg-black rounded-lg w-28"
+            className="shrink-0 p-3 sm:p-4 sm:mr-4 mr-1 bg-black rounded-lg sm:rounded-full flex justify-center"
           >
             <div
               role="status"
@@ -221,7 +227,7 @@ export function ChatWindow(props: {
                   : ""
               }
             >
-              Send
+              <Image width={30} src={sendButton} alt="send button" />
             </span>
           </button>
         </div>
