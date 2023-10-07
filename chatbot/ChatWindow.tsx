@@ -2,18 +2,13 @@
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import { useChat } from "ai/react";
-import { useRef, useState, ReactElement } from "react";
+import { useRef, useState, ReactElement, useEffect } from "react";
 import type { FormEvent } from "react";
 import type { AgentStep } from "langchain/schema";
-
-import { ChatMessageBubble } from "@/components/ChatMessageBubble";
-import { UploadDocumentsForm } from "@/components/UploadDocumentsForm";
+import { ChatMessageBubble } from "@/chatbot/ChatMessageBubble";
 import { IntermediateStep } from "./IntermediateStep";
 import Image from "next/image";
-import bg from "../public/images/bg.webp";
-import newChatButton from "../public/images/new.svg";
 import sendButton from "../public/images/send.svg";
 
 export function ChatWindow(props: {
@@ -27,24 +22,12 @@ export function ChatWindow(props: {
   const {
     endpoint,
     emptyStateComponent,
-    showIngestForm,
     showIntermediateStepsToggle,
   } = props;
-
-  const  cleanChat = () => {
-    setMessages([]);
-    if (messageContainerRef.current) {
-      messageContainerRef.current.classList.remove("grow");
-    }
-  }
-
 
   const [showIntermediateSteps, setShowIntermediateSteps] = useState(false);
   const [intermediateStepsLoading, setIntermediateStepsLoading] =
     useState(false);
-  const ingestForm = showIngestForm && (
-    <UploadDocumentsForm></UploadDocumentsForm>
-  );
   const intemediateStepsToggle = showIntermediateStepsToggle && (
     <div>
       <input
@@ -70,13 +53,27 @@ export function ChatWindow(props: {
     api: endpoint,
     onError: (e: any) => {
       toast(e.message, {
-        theme: "light",
+        theme: "dark",
       });
     },
   });
 
+  useEffect(() => {
+    // Add the initial assistant message when the component mounts
+    if (messages.length === 0) {
+      setMessages([
+        {
+          id: "0",
+          content: "hi there how can i help you?",
+          role: "assistant",
+        },
+      ]);
+    }
+  }, []); // Run this effect only once when the component mounts
+
   async function sendMessage(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     if (messageContainerRef.current) {
       messageContainerRef.current.classList.add("grow");
     }
@@ -139,7 +136,7 @@ export function ChatWindow(props: {
       } else {
         if (json.error) {
           toast(json.error, {
-            theme: "light",
+            theme: "dark",
           });
           throw new Error(json.error);
         }
@@ -148,20 +145,13 @@ export function ChatWindow(props: {
   }
   return (
     <div
-      className={`bg-transparent flex flex-col justify-between items-center p-4 rounded grow overflow-hidden`}
+      className={`absolute right-10 bottom-10 text-white bg-slate-900 flex flex-col justify-between p-3 rounded-xl grow overflow-hidden`}
     >
-      <Image
-        src={bg} // Path to your image in the public folder
-        alt="Background Image"
-        layout="fill" // This makes the image cover the entire parent div
-        objectFit="cover" // This scales the image to cover the entire div
-        className="-z-10"
-      />
       {messages.length === 0 ? (
         emptyStateComponent
       ) : (
         <div
-          className="w-full lg:max-w-[900px] max-w-[700px] md:h-[90vh] md:w-[700px] md:bg-gradient-to-b md:from-white-opacity-75 md:via-white-opacity-25 md:to-transparent md:rounded-lg md:ring md:ring-slate-200 md:shadow-xl flex flex-col-reverse sm:p-8 mx-2 mb-16  overflow-auto transition-[flex-grow] ease-in-out items-end"
+          className="p-2 h-[60vh] border max-w-[300px] rounded-xl flex flex-col-reverse mx-2 overflow-auto transition-[flex-grow] ease-in-out items-end"
           ref={messageContainerRef}
         >
           {messages.length > 0
@@ -180,27 +170,21 @@ export function ChatWindow(props: {
             : ""}
         </div>
       )}
-      {messages.length === 0 && ingestForm}
-
       <form
         onSubmit={sendMessage}
-        className={`absolute bottom-0 bg-transparent mx-auto z-30 sm:mb-8 mb-6 w-full md:w-[700px]`}
+        className={`w-full bg-transparent mx-auto z-30`}
       >
         <div className="flex">{intemediateStepsToggle}</div>
-        <div className="flex w-full mt-4 justify-center items-center">
-          <div onClick={()=>cleanChat()} className="flex justify-center items-center shrink-0 p-3 sm:p-4 sm:ml-4 ml-1 bg-black rounded-full sm:w-28 sm:h-14">
-            <Image width={30} src={newChatButton} alt="clear chat button" />
-            <span className="hidden sm:block ml-2 font-bold">New</span>
-          </div>
+        <div className="flex w-full mt-4">
           <input
-            className="grow max-w-[700px] focus:outline-none mx-2 sm:mx-6 p-4 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
+            className="grow focus:outline-none rounded-r-none p-2 rounded-lg shadow-xl hover:shadow-lg drop-shadow-lg"
             value={input}
             placeholder={"Ask me anything..."}
             onChange={handleInputChange}
           />
           <button
             type="submit"
-            className="mr-1 shrink-0 p-3 sm:p-4 sm:mr-6 bg-black rounded-lg sm:rounded-full flex justify-center"
+            className=" rounded-l-none shrink-0 p-2.5 bg-[#6f40d5] rounded-lg flex justify-center"
           >
             <div
               role="status"
@@ -240,6 +224,7 @@ export function ChatWindow(props: {
           </button>
         </div>
       </form>
+
       <ToastContainer />
     </div>
   );

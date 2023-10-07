@@ -11,16 +11,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>MASTER AI</title>
-        <link rel="shortcut icon" href="/images/logo.webp" />
+        <title>chatbot</title>
+        <link rel="shortcut icon" href="" />
         <meta
           name="description"
-          content="Enfiity - MASTER AI"
+          content="chatbot"
         />
-        <meta property="og:title" content="Enfiity - MASTER AI" />
+        <meta property="og:title" content="chatbot" />
       </head>
       <body className={publicSans.className}>
-        <div className="flex flex-col p-4 md:p-12 h-[100vh]">
+        <div>
           {children}
         </div>
       </body>
